@@ -561,12 +561,17 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ichm_Prefix.pch;
-				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					/usr/local/opt/libxml2/include/libxml2,
+				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
 					"-lxml2",
 					"-lcrypto",
+					"-L/usr/local/lib",
+					"-lchm",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.robinlu.${PRODUCT_NAME:identifier}";
 				PRODUCT_NAME = iChm;
@@ -588,12 +593,17 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ichm_Prefix.pch;
-				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					/usr/local/opt/libxml2/include/libxml2,
+				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
 					"-lxml2",
 					"-lcrypto",
+					"-L/usr/local/lib",
+					"-lchm",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.robinlu.${PRODUCT_NAME:identifier}";
 				PRODUCT_NAME = iChm;

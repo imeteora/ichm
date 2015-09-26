@@ -8,7 +8,7 @@
 
 #import <WebKit/WebKit.h>
 #import "CHMDocument.h"
-#import <chm_lib/chm_lib.h>
+#import <chm_lib.h>
 #import <PSMTabBarControl/PSMTabBarControl.h>
 #import "ITSSProtocol.h"
 #import "CHMTableOfContent.h"
