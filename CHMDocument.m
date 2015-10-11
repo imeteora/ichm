@@ -178,8 +178,6 @@ static inline unsigned long readLong( NSData *data, unsigned int offset ) {
 
 static inline NSString * readString( NSData *data, unsigned long offset, NSString *encodingName ) {
     const char *stringData = (char *)[data bytes] + offset;
-//    const char* stringData;
-//    [data getBytes:&stringData range:NSMakeRange(offset, data.length - offset)];
     return [[NSString alloc] initWithCString:stringData encoding:nameToEncoding(encodingName)];
 }
 
