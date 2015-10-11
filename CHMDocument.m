@@ -178,7 +178,9 @@ static inline unsigned long readLong( NSData *data, unsigned int offset ) {
 
 static inline NSString * readString( NSData *data, unsigned long offset, NSString *encodingName ) {
     const char *stringData = (char *)[data bytes] + offset;
-	return [[NSString alloc] initWithCString:stringData encoding:nameToEncoding(encodingName)];
+//    const char* stringData;
+//    [data getBytes:&stringData range:NSMakeRange(offset, data.length - offset)];
+    return [[NSString alloc] initWithCString:stringData encoding:nameToEncoding(encodingName)];
 }
 
 static inline NSString * readTrimmedString( NSData *data, unsigned long offset, NSString *encodingName ) {
@@ -658,11 +660,12 @@ static inline NSString * LCIDtoEncodingName(unsigned int lcid) {
 	[filePath retain];
 		
     chmFileHandle = chm_open( [fileName fileSystemRepresentation] );
-    if( !chmFileHandle ) return NO;
-	
+    if( !chmFileHandle )
+        return NO;
 	
     [self loadMetadata];
 	[self setupTOCSource];
+    
 	return YES;
 }
 
